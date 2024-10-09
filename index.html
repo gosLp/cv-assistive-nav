@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assistive Navigation Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Assistive Navigation using YOLO and BLIP</h1>
+        <p>This project uses object detection and image captioning models to provide hazard avoidance directions for users with visual impairments.</p>
+    </header>
+
+    <section id="overview">
+        <h2>Project Overview</h2>
+        <p>The goal of this project is to help users navigate their environment safely by detecting obstacles and generating instructions using machine learning models.</p>
+        <ul>
+            <li><strong>YOLOv8</strong> or <strong>MobileNet SSD</strong> for object detection</li>
+            <li><strong>BLIP</strong> for image captioning</li>
+            <li>Instructions generated via an LLM for hazard avoidance</li>
+        </ul>
+    </section>
+
+    <section id="workflow">
+        <h2>Workflow</h2>
+        <ol>
+            <li>Capture video from a phone's camera.</li>
+            <li>Process frames using YOLO or MobileNet SSD to detect objects.</li>
+            <li>Use BLIP to generate captions describing detected objects.</li>
+            <li>Feed the captions into a language model to produce navigation instructions.</li>
+        </ol>
+    </section>
+
+    <!-- <section id="demo">
+        <h2>Demo Video</h2>
+        <p>Check out a demo video of the system in action:</p>
+        <video controls>
+            <source src="demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section> -->
+
+    <footer>
+        <p>Project by [Your Name]</p>
+        <a href="https://github.com/gosLp/cv-assistive-nav" target="_blank">GitHub Repository</a>
+    </footer>
+</body>
+</html>
