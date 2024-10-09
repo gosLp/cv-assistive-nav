@@ -4,23 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Assistive Navigation Project</title>
+    <title>Computer Vision Course Project
+        | ECE, Virginia Tech | Fall 2024: ECE 4554/5554</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Assistive Navigation using YOLO and BLIP</h1>
+        <h1>Vision based Assistive Navigation</h1>
+        <span style="font-size: 18px; line-height: 1.5em;"><strong>Clifford Reeve Menezes, Pratheek Prakash Shetty</strong></span><br>
+        <span style="font-size: 16px; line-height: 1.5em;">Fall 2024 ECE 4554/5554 Computer Vision: Course Project</span><br>
+        <span style="font-size: 16px; line-height: 1.5em;">Virginia Tech</span>
         <p>This project uses object detection and image captioning models to provide hazard avoidance directions for users with visual impairments.</p>
     </header>
 
     <section id="overview">
         <h2>Project Overview</h2>
+        <p>The aim of this project is to develop a navigation system for pedestrians intended for visually impaired pedestrians. This system will use real-time hazard detection for the identification of any coming obstacles or hazards in their path and will warn them to avoid any accidents for protecting themselves on time.</p>
         <p>The goal of this project is to help users navigate their environment safely by detecting obstacles and generating instructions using machine learning models.</p>
         <ul>
             <li><strong>YOLOv8</strong> or <strong>MobileNet SSD</strong> for object detection</li>
             <li><strong>BLIP</strong> for image captioning</li>
             <li>Instructions generated via an LLM for hazard avoidance</li>
         </ul>
+    </section>
+    <section id = "approach">
+        <h2>Approach</h2>
+        <p>In order to be able to provide the required real-time hazard detection and guidance to visually impaired pedestrians, this project is going to rely on sophisticated Computer Vision and natural language processing techniques.</p>
+    </section>
+    <section id="teaser">
+        <h3>Teaser figure</h3>
+        Assisting Navigation and hazards using vision on the smartphone
+        <br><br>
+        <div style="text-align: center;">
+            <img style="height: 200px;" alt="" src="teaser.png">
+        </div>
     </section>
 
     <section id="workflow">
@@ -29,8 +46,19 @@
             <li>Capture video from a phone's camera.</li>
             <li>Process frames using YOLO or MobileNet SSD to detect objects.</li>
             <li>Use BLIP to generate captions describing detected objects.</li>
-            <li>Feed the captions into a language model to produce navigation instructions.</li>
+            <li>Assisting Directions: We will make use of TinyBERT LLM, specially optimized to generate helpful directions with a minimum amount of information for real time communication with the user.</li>
+            <li> Dataset: Our dataset will consist of annotated images relevant for pedestrian navigation-objects and environmental hazards that may pose a danger to people commuting on foot.</li>
         </ol>
+    </section>
+
+    <section id="success">
+        <h2>Sucess Parameters</h2>
+        <p>The project would be considered a success if the navigation system can efficiently identify hazardous objects in Real-Time.</p>
+    </section>
+
+    <section id="exipirimental">
+        <h2>Data Collection</h2>
+        <p>We shall utilize a comprehensive dataset, with various images of urban scenes, crosswalks, sidewalks, and any sign and obstacle or pedestrians, vehicles, and other obstacles that might be detrimental, like potholes. This dataset should represent environmental conditions from day to night, including weather conditions.</p>
     </section>
 
     <!-- <section id="demo">
@@ -43,7 +71,7 @@
     </section> -->
 
     <footer>
-        <p>Project by [Your Name]</p>
+        <p> © Project by Clifford Reeve Menezes and Pratheek Prakash Shetty group 39</p>
         <a href="https://github.com/gosLp/cv-assistive-nav" target="_blank">GitHub Repository</a>
     </footer>
 </body>
