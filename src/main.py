@@ -16,13 +16,14 @@ def main():
 
     try:
         while True:
-            # Detect objects
+            # Detect objects and get the frame
             detected_objects, frame = detect_objects(cap, model)
 
-            # Generate a scene caption
-            scene_description = scene_captioner.generate_caption(detected_objects)
-            if scene_description:
-                print(scene_description)
+            # Generate a scene caption using the frame, not detected_objects
+            if frame is not None:
+                scene_description = scene_captioner.generate_caption(frame)
+                if scene_description:
+                    print(f"Scene Description: {scene_description}")
 
             # Display the annotated frame with detected objects
             if frame is not None:
