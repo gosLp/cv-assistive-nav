@@ -15,15 +15,15 @@ h1 {
     color: #333;
 }
 
+p {
+    text-align: justify;
+  }
+
 section {
     background: white;
     padding: 20px;
     margin-bottom: 10px;
     border-radius: 8px;
-}
-
-#overview ul {
-    list-style-type: square;
 }
 
 footer {
@@ -36,3 +36,4 @@ footer a {
     text-decoration: none;
     font-weight: bold;
 }
+
