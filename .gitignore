@@ -4,3 +4,6 @@ __pycache__/
 .DS_Store
 .vscode/
 *.pt
+.env
+*_log.txt
+videos/

@@ -1,40 +1,54 @@
 import cv2
-
 from ultralytics import YOLO
 
-# Load YOLOv5 model
-model = YOLO('yolov8n.pt')
-
-# Load camera for detection
-cap = cv2.VideoCapture(0)
-
-if not cap.isOpened():
-    print("Error: Could not open camera.")
-    exit()
-
-while True:
-    ret, frame = cap.read()
-
-    if not ret:
-        print("Error: Could not read frame from video capture")
-        break
-
-    # Perform detection
+def detect_objects(frame, model):
+    # Run object detection on the frame
     results = model(frame)
 
-    # Draw bounding boxes on the frame
-    annotated_frame = results[0].plot()
+    # Extract object details from the results
+    objects_detected = []
+    for detection in results[0].boxes:
+        label = model.names[int(detection.cls)]
+        confidence = detection.conf
+        box = detection.xyxy  # Bounding box coordinates
+        objects_detected.append({
+            'label': label,
+            'confidence': float(confidence),
+            'box': box.tolist()
+        })
 
-    # Display the frame
-    cv2.imshow('Frame', annotated_frame)
-
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
-#release the capture and close all windows
-cap.release()
-cv2.destroyAllWindows()
+    return objects_detected
 
 
 
+def detect_objects_test_video(video_path, model):
+    cap = cv2.VideoCapture(video_path)
+    
+    if not cap.isOpened():
+        print(f"Error: Could not open video file {video_path}")
+        return None, None
+
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            break
+
+        # Run object detection on the frame
+        results = model(frame)
+
+        # Extract object details from the results
+        objects_detected = []
+        for detection in results[0].boxes:
+            label = model.names[int(detection.cls)]
+            confidence = detection.conf
+            box = detection.xyxy  # Bounding box coordinates
+            objects_detected.append({
+                'label': label,
+                'confidence': float(confidence),
+                'box': box.tolist()
+            })
+
+        yield objects_detected, frame  # Yield for use in main.py
+
+    cap.release()
 
