@@ -42,11 +42,39 @@
         <p>Compared to traditional methods, this system stands out for its use of a widely available mobile device, which reduces the need for specialized tools. Additionally, the system offers a more adaptive and user-centric solution by incorporating generative AI to refine the directions.
         </p>
 
+        <!-- add an image that shows workflow here or in the appraoch section -->
+
     </section>
 
     <section id = "approach">
         <h2>Approach</h2>
         <p>In order to be able to provide the required real-time hazard detection and guidance to visually impaired pedestrians, this project is going to rely on sophisticated Computer Vision and natural language processing techniques.</p>
+        <p>To approach the problem, we broke it down into smaller tasks.</p>
+        <ol>
+            <li>Find an efficient way to detect objects in real time.</li>
+            <li>Caption the scene with high accuracy.</li>
+            <li>Utilize an LLM that can provide the best results for the scene in front of the user.</li>
+            <li>Convert the instructions into audio-based instruction.</li>
+        </ol>
+        <p>Initially, we reviewed papers that could give us insight into the different methods and ideas used to solve the problem. We realized that no paper considered using a mobile device for object detection in this area, which inspired us to use the idea.</p>
+
+        <!-- (mention some papers here or make a related works page) -->
+
+        <p>The closest approach to our paper is [], which used 3D-printed glasses to detect objects using IoT.</p> 
+        <!-- mention that paper -->
+
+        <p><b>Task 1: Finding an object detection model</b></p>
+        <p>After reviewing the papers, we realized that YOLO models are efficient in object recognition and can be easily trained. However, the YOLOv8 nano is a pre-trained model that can easily detect and classify objects in real time. We tested this model by sending it test videos of Blacksburg, where it quickly identified common hazards such as cars, pedestrians, and even benches.</p>
+        <p>One problem we faced here is the ethical problem of having a pedestrian being recorded. We had to request permission from pedestrians to use the record data. Therefore, we could not test with multiple videos that involved pedestrians. However, even with limited testing, the model could accurately identify objects.</p>
+
+        <p><b>Task 2: Captioning the objects with high accuracy.</b></p>
+        <p>In the image or scene captioning world, many models accurately caption images in real-time. We experimented with the BLIP model, which captioned the objects sent by YOLO with almost complete accuracy. An observation noticed here was that sometimes the captions generated in an indoor environment were not as accurate compared to an outdoor environment. However, our model solely focuses on an outdoor environment, so this did not affect us.</p>
+
+        <p><b>Task 3: Utilize an LLM that can provide the best results for the scene in front of the user.</b></p>
+        <p>Our initial approach was to use a local transformer like TinyBert LLM, which can locally give directions. However, upon implementation, we realized that the model gave incorrect results and required a lot of training, which could take a lot of computational power. Overall, implementing such a model locally could potentially risk draining the phone's battery or overheating the device. We eventually decided to make an API call to a preexisting LLM online. We gave a prompt to this model so it could identify solutions with ease. Upon testing with this LLM using live footage, we received accurate results in real time.</p>
+
+        <p><b>Convert the instructions into audio-based instruction.</b></p>
+        <!-- add this part -->
     </section>
     
 
