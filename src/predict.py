@@ -6,7 +6,7 @@ print("Curr working directory:", os.getcwd())
 
 VIDEOS_DIR = os.path.join('src', 'videos')
 
-video_path = os.path.join(VIDEOS_DIR, 'video.mp4')
+video_path = os.path.join(VIDEOS_DIR, 'video.mp4') #replace video.mp4 with your own video
 video_path_out = '{}_out.mp4'.format(video_path)
 
 cap = cv2.VideoCapture(video_path)

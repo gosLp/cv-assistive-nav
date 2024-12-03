@@ -19,17 +19,29 @@
 
     <section id="abstract">
         <h2>Abstract</h2>
-        <p>For visually impaired people, traveling alone in the modern world can be difficult, particularly when crossing roadways or dodging hazards in real time. Our idea offers a practical and readily available tool that utilizes the user's smartphone, eliminating the need for further specialist equipment while guaranteeing smooth guidance. To solve this problem, we created an assistive navigation system that uses YOLO for object identification, BLIP for scene captioning, and an API for a generative AI model that provides precise descriptions and guidance of hazards in their path in real-time. Our model achieves a —--- success rate with —----something.
+        <p>For visually impaired people, traveling alone in the modern world can be difficult, especially when crossing roadways or hazards in real-time. Our idea is to create safe smartphone navigation, eliminating the need for further special equipment while guaranteeing smooth guidance. To solve this problem, we created an assistive navigation system that uses YOLO for object identification, BLIP for scene captioning, and an API for a generative AI model that provides precise descriptions and guidance of hazards in their path in real-time. Our model achieves a —--- success rate with —----something.
         </p>
         
     </section>
     <section id="teaser">
-        <h3>Teaser figure</h3>
-        Assisting Navigation and hazards using vision on the smartphone
+        <h2>Teaser figure</h2>
+        Assisting Navigation and Hazards using vision on the smartphone
         <br><br>
         <div style="text-align: center;">
             <img style="height: 200px;" alt="" src="teaser.png">
         </div>
+        <p style="text-align: center;">*This is not an image from the actual model*</p>
+    </section>
+
+    <section id = "introduction">
+        <h2>Introduction</h2>
+        <p>What if someone who is visually challenged could "see" what is going on around them? For the visually impaired, navigating the world may be a challenging task. While current solutions such as wearable technology, guide dogs, and specialized walking aids provide invaluable support, their accessibility, affordability, and efficacy are sometimes limited. On the other hand, depending just on a mobile phone offers a simpler and more economical method, taking advantage of smartphones' popularity.</p>
+
+        <p>We are using a pre-trained YOLO model, which can perform real-time object detection with high accuracy. The system can efficiently identify hazards and obstacles such as vehicles, staircases, and pedestrians. When objects are detected, the results are sent to a BLIP model, which processes the scene and generates descriptive captions. These captions are then passed on to a generative AI tool via an API call. The AI predicts the most efficient course of action for the user. The resulting directions are converted into speech, which guides the user safely along the path. The approach combines fields in object detection, scene captioning, and generative AI.</p>
+
+        <p>Compared to traditional methods, this system stands out for its use of a widely available mobile device, which reduces the need for specialized tools. Additionally, the system offers a more adaptive and user-centric solution by incorporating generative AI to refine the directions.
+        </p>
+
     </section>
 
     <section id = "approach">
