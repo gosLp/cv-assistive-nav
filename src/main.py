@@ -79,38 +79,6 @@ class NavigationAssistant:
             logging.error(f"Error in refine_guidance: {e}")
             return "I'm sorry, I couldn't process the guidance at the moment. Please try again later."
 
-# async def guidance_worker(queue, assistant, tts, output_file):
-#     """Worker function that processes the guidance queue"""
-#     while True:
-#         try:
-#             # Wait to get an item from the queue
-#             scene_caption, rule_based_guidance = await queue.get()
-
-#             # Log processing information
-#             logging.info("Processing guidance from queue.")
-
-#             # Refine the guidance with GPT-4
-#             refined_guidance = await assistant.refine_guidance(scene_caption, rule_based_guidance)
-#             timestamp = time.strftime('%H:%M:%S', time.gmtime(time.time()))
-#             guidance_output = f"Timestamp: {timestamp} | Guidance: {refined_guidance}\n"
-#             print(f"Timestamp: {timestamp} | Guidance: {refined_guidance}")
-
-#             # Write the guidance to the output file
-#             with open(output_file, "a") as file:
-#                 file.write(guidance_output)
-
-#             # Generate audio using TTS
-#             await asyncio.get_event_loop().run_in_executor(None, tts.generate_audio, refined_guidance)
-
-#             # Mark the task as done
-#             queue.task_done()
-
-#         except Empty:
-#             # If queue is empty, just keep looping
-#             logging.info("No guidance in the queue, waiting for more tasks...")
-#             continue
-#         except Exception as e:
-#             logging.error(f"Error in guidance_worker: {e}")
 
 def main():
     # test video instead of live feed
@@ -132,12 +100,6 @@ def main():
 
     output_file = "guidance_output.txt"
 
-    # Video Writer for annotated output
-    frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-    frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    fps = int(cap.get(cv2.CAP_PROP_FPS))
-    video_writer = cv2.VideoWriter('annotated_output.mp4', cv2.VideoWriter_fourcc(*'mp4v'), fps, (frame_width, frame_height))
-
     # Clear or create the output file before running
     with open(output_file, "w") as file:
         file.write("Guidance Output Log\n")
@@ -149,7 +111,7 @@ def main():
 
 
     frame_count = 0
-    N = 30  # Only process every Nth frame for efficiency
+    N = 60  # Only process every Nth frame for efficiency
     guidance_timestamps = []
 
     # Executor for running blocking code
@@ -245,14 +207,6 @@ def main():
                 except Exception as e:
                     logging.error(f"Error during fram processing main loop: {e}")
 
-                # # Use GPT-4 to refine the guidance with continuous conversation context
-                # refined_guidance = await navigation_assistant.refine_guidance(scene_caption, rule_based_guidance)
-                # timestamp = time.strftime('%H:%M:%S', time.gmtime(time.time()))
-                # print(f"Timestamp: {timestamp} | Guidance: {refined_guidance}")
-
-                # Generate audio using TTS asynchronously to prevent blocking
-                # asyncio.get_event_loop().run_in_executor(executor, tts.generate_audio, refined_guidance)
-
             # Display the annotated frame with detected objects (optional for debugging)
             annotated_frame = model(frame)[0].plot()  # Visual representation
             cv2.imshow('YOLOv8 Detection', annotated_frame)
@@ -263,11 +217,10 @@ def main():
 
     finally:
         cap.release()
-        video_writer.release()
         cv2.destroyAllWindows()
 
         # Merge the annotation video and guidance audio
-        mergge_audio_with_video('annotated_output.mp4', guidance_timestamps, output_video)
+        # mergge_audio_with_video('annotated_output.mp4', guidance_timestamps, output_video)
 
 def mergge_audio_with_video(video_path, guidance_timestamps, output_path):
     try:
