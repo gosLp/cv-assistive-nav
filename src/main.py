@@ -1,4 +1,5 @@
 import cv2
+import subprocess
 from ultralytics import YOLO
 from src.detection import detect_objects
 from src.captioning import SceneCaptioner
@@ -17,6 +18,7 @@ import logging
 from threading import Thread
 import torch
 import ffmpeg
+# from moviepy.editor import VideoFileClip, AudioFileClip, CompositeAudioClip
 
 
 # Setup logging to help with debugging
@@ -79,42 +81,9 @@ class NavigationAssistant:
             logging.error(f"Error in refine_guidance: {e}")
             return "I'm sorry, I couldn't process the guidance at the moment. Please try again later."
 
-# async def guidance_worker(queue, assistant, tts, output_file):
-#     """Worker function that processes the guidance queue"""
-#     while True:
-#         try:
-#             # Wait to get an item from the queue
-#             scene_caption, rule_based_guidance = await queue.get()
-
-#             # Log processing information
-#             logging.info("Processing guidance from queue.")
-
-#             # Refine the guidance with GPT-4
-#             refined_guidance = await assistant.refine_guidance(scene_caption, rule_based_guidance)
-#             timestamp = time.strftime('%H:%M:%S', time.gmtime(time.time()))
-#             guidance_output = f"Timestamp: {timestamp} | Guidance: {refined_guidance}\n"
-#             print(f"Timestamp: {timestamp} | Guidance: {refined_guidance}")
-
-#             # Write the guidance to the output file
-#             with open(output_file, "a") as file:
-#                 file.write(guidance_output)
-
-#             # Generate audio using TTS
-#             await asyncio.get_event_loop().run_in_executor(None, tts.generate_audio, refined_guidance)
-
-#             # Mark the task as done
-#             queue.task_done()
-
-#         except Empty:
-#             # If queue is empty, just keep looping
-#             logging.info("No guidance in the queue, waiting for more tasks...")
-#             continue
-#         except Exception as e:
-#             logging.error(f"Error in guidance_worker: {e}")
-
 def main():
     # test video instead of live feed
-    video_file  = "../videos/test6.mp4"
+    video_file  = "../videos/test.mp4"
     # Initialize YOLO model and video capture
     model = YOLO('yolov8n.pt')
     output_video = "result.mp4"
@@ -130,13 +99,13 @@ def main():
     tts = TextToSpeech()
     depth_estimator = DepthEstimator()
 
-    output_file = "guidance_output.txt"
+    frames_dir = "./frames"
+    os.makedirs(frames_dir, exist_ok=True)
+    # Directory for audio files
+    audio_dir = "audio"
+    os.makedirs(audio_dir, exist_ok=True)
 
-    # Video Writer for annotated output
-    frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-    frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    fps = int(cap.get(cv2.CAP_PROP_FPS))
-    video_writer = cv2.VideoWriter('annotated_output.mp4', cv2.VideoWriter_fourcc(*'mp4v'), fps, (frame_width, frame_height))
+    output_file = f"guidance_output_{video_file[-8:]}.txt"
 
     # Clear or create the output file before running
     with open(output_file, "w") as file:
@@ -226,9 +195,9 @@ def main():
                     # Use GPT-4 to refine the guidance with continuous conversation context
                     refined_guidance = navigation_assistant.refine_guidance(scene_caption, rule_based_guidance)
                     # Generate audio using TTS
-                    audio_filename = f"audio_{frame_count}.wav"
+                    audio_filename = f"{audio_dir}/audio_{video_file[-9:]}_{frame_count}_{current_time}.wav"
                     tts.generate_audio(refined_guidance, audio_filename)
-                    guidance_timestamps.append((current_time, audio_filename))
+                    guidance_timestamps.append((current_time, audio_filename, refined_guidance))
 
                     timestamp = time.strftime('%H:%M:%S', time.gmtime(time.time()))
                     guidance_output = f"Timestamp: {timestamp} | Guidance: {refined_guidance}\n"
@@ -245,16 +214,12 @@ def main():
                 except Exception as e:
                     logging.error(f"Error during fram processing main loop: {e}")
 
-                # # Use GPT-4 to refine the guidance with continuous conversation context
-                # refined_guidance = await navigation_assistant.refine_guidance(scene_caption, rule_based_guidance)
-                # timestamp = time.strftime('%H:%M:%S', time.gmtime(time.time()))
-                # print(f"Timestamp: {timestamp} | Guidance: {refined_guidance}")
-
-                # Generate audio using TTS asynchronously to prevent blocking
-                # asyncio.get_event_loop().run_in_executor(executor, tts.generate_audio, refined_guidance)
 
             # Display the annotated frame with detected objects (optional for debugging)
             annotated_frame = model(frame)[0].plot()  # Visual representation
+            # Save the frame as an image file
+            frame_filename = os.path.join(frames_dir, f"{video_file[-8:]}_frame_{frame_count:05d}.png")
+            cv2.imwrite(frame_filename, annotated_frame)
             cv2.imshow('YOLOv8 Detection', annotated_frame)
 
             # Press 'q' to quit the video feed
@@ -262,46 +227,119 @@ def main():
                 break
 
     finally:
+        create_video_from_frames(frames_dir, f"annotated_output_{video_file[-8:]}", video_file)
         cap.release()
-        video_writer.release()
         cv2.destroyAllWindows()
 
+        # Usage
+        text_overlayed_video_path = f"text_overlayed_video_{video_file[-8:]}"
+        # final_output_path = 'final_video.mp4'
+
+        # create_text_overlayed_video(video_path, guidance_timestamps, text_overlayed_video_path)
+        merge_audio_with_video(f"annotated_output_{video_file[-8:]}", guidance_timestamps, output_video, text_overlayed_video_path)
+
         # Merge the annotation video and guidance audio
-        mergge_audio_with_video('annotated_output.mp4', guidance_timestamps, output_video)
+        # merge_audio_with_video('annotated_output.mp4', guidance_timestamps, output_video)
 
-def mergge_audio_with_video(video_path, guidance_timestamps, output_path):
+def create_video_from_frames(frames_dir, output_path, video_file):
     try:
-        #  load video
-        input_video = ffmpeg.input(video_path)
+        # use ffmpeg to create a video from the frames
+        # the frames must be sequentially named 
+        command = [
+            "ffmpeg",
+            "-framerate", "30",
+            "-i", f"{frames_dir}/{video_file[-8:]}_frame_%05d.png",
+            "-c:v", "libx264",
+            "-pix_fmt", "yuv420p",
+            output_path
+        ]
+        subprocess.run(command, check=True)
+        logging.info(f"Video created: {output_path}")
+    except subprocess.CalledProcessError as e:
+        logging.error(f"Error creating video from frames: {e}")
 
-        # create flter chain to overlay audio at the correct timestamp
-        audio_inputs = []
+def merge_audio_with_video(video_path, guidance_timestamps, output_path, text_overlayed_video_path):
+    try:
+        # Step 1: Add Text Overlays to the Video
+        # text_overlay_video = "text_overlay_output.mp4"
 
-                # Add each audio at the appropriate timestamp
-        for timestamp, audio_file in guidance_timestamps:
-            if os.path.exists(audio_file):
-                audio = ffmpeg.input(audio_file, ss=timestamp)
-                audio_inputs.append(audio)
-            else:
-                logging.warning(f"Audio file {audio_file} not found, skipping.")
-        
-        # Check if we have audio inputs
-        if len(audio_inputs) == 0:
-            logging.error("No audio files to merge. Skipping video merging.")
-            return
+        filter_complex = []
+        for timestamp, _, guidance_text in guidance_timestamps:
+            # Escape special characters in guidance text for ffmpeg
+            escaped_guidance_text = guidance_text.replace(':', '\\:').replace(',', '\\,').replace('\'', "\\'")
+            filter_complex.append(
+                f"drawtext=fontfile=/Library/Fonts/Arial.ttf:text='{escaped_guidance_text}':"
+                f"fontcolor=white:fontsize=24:box=1:boxcolor=black@0.5:boxborderw=5:"
+                f"x=(w-text_w)/2:y=10:enable='between(t,{timestamp},{timestamp + 3})'"
+            )
 
-        # Create a filter to concatenate all audio streams
-        audio = ffmpeg.concat(*audio_inputs, v=0, a=1)
-        
-        # Output the final video
-        (
-            ffmpeg
-            .output(input_video, audio, output_path)
-            .run(overwrite_output=True)
-        )
-        logging.info(f"Final video with guidance audio created: {output_path}")
+        filter_complex_str = ",".join(filter_complex)
+
+        # Create video with text overlays only
+        ffmpeg_command = [
+            'ffmpeg',
+            '-i', video_path,
+            '-vf', filter_complex_str,
+            '-c:v', 'libx264',
+            '-preset', 'fast',
+            '-crf', '23',
+            text_overlayed_video_path,
+            '-y'
+        ]
+
+        logging.info(f"FFmpeg Command for Text Overlay: {' '.join(ffmpeg_command)}")
+
+        result = subprocess.run(ffmpeg_command, capture_output=True, text=True)
+
+        if result.returncode != 0:
+            logging.error(f"FFmpeg Error during text overlay: {result.stderr}")
+            return False
+
+#         # Step 2: Add Audio Sequentially
+#         current_video = text_overlay_video
+
+#         for timestamp, audio_file, _ in guidance_timestamps:
+#             # Verify that audio file exists
+#             if not os.path.exists(audio_file):
+#                 logging.warning(f"Audio file does not exist: {audio_file}")
+#                 continue
+
+#             output_with_audio = f"temp_output_{timestamp}.mp4"
+
+#             # Prepare FFmpeg command to add audio with delay
+#             ffmpeg_command = [
+#                 'ffmpeg',
+#                 '-i', current_video,
+#                 '-i', audio_file,
+#                 '-filter_complex', f"[1:a]adelay={int(timestamp * 1000)}|{int(timestamp * 1000)}:all=1[a];[0:a][a]amix=inputs=2",
+#                 '-c:v', 'copy',
+#                 '-c:a', 'aac',
+#                 '-b:a', '192k',
+#                 output_with_audio,
+#                 '-y'
+#             ]
+
+#             logging.info(f"FFmpeg Command for Adding Audio: {' '.join(ffmpeg_command)}")
+
+#             result = subprocess.run(ffmpeg_command, capture_output=True, text=True)
+
+#             if result.returncode != 0:
+#                 logging.error(f"FFmpeg Error during audio merging: {result.stderr}")
+#                 return False
+
+#             # Update current video to the output of the last step
+#             current_video = output_with_audio
+
+#         # Move final video to output path
+#         os.rename(current_video, output_path)
+#         logging.info(f"Successfully merged video and audio: {output_path}")
+#         return True
+
     except Exception as e:
-        logging.error(f"Error during video and audio merging: {e}")
+        logging.error(f"Unexpected error in merge_audio_with_video: {e}")
+        return False
+
+
 
 if __name__ == "__main__":
        # Run the main coroutine in the current event loop
