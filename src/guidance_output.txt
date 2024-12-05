@@ -1,0 +1,63 @@
+Guidance Output Log
+===================
+Timestamp: 19:15:30 | Guidance: 1. Move to the left to avoid the person ahead.  
+2. Continue forward cautiously.  
+3. Be aware of any changes in surface or obstacles.  
+4. If you hear footsteps approaching, stop and wait for them to pass.  
+
+Timestamp: 19:15:54 | Guidance: 1. Move to the left to avoid the women ahead.  
+2. Continue forward slowly.  
+3. Listen for any other pedestrians or obstacles.  
+4. If you hear them getting closer, stop and let them pass.  
+Timestamp: 19:16:16 | Guidance: 1. Move to the left to avoid the person ahead.  
+2. Proceed forward carefully.  
+3. Stay alert for any other pedestrians or obstacles.  
+4. If you hear footsteps approaching from behind, pause and let them pass.  
+Timestamp: 19:16:42 | Guidance: 1. Move to the left to avoid the woman and her dog ahead.  
+2. Continue forward slowly.  
+3. Be mindful of the dog's movements.  
+4. If the dog approaches, stop and wait for them to pass.  
+Timestamp: 19:17:09 | Guidance: 1. Move to the left to avoid the woman ahead.  
+2. Proceed forward carefully, watching for the bus.  
+3. Be alert for any potential hazards near the bus.  
+4. If the bus doors open, stop and wait until
+Timestamp: 19:17:21 | Guidance: 1. Move to the left to avoid the woman ahead.  
+2. Continue forward cautiously, keeping an ear out for the bus.  
+3. Stay aware of the bus’s position as you pass.  
+4. If the bus doors open,
+Timestamp: 19:17:44 | Guidance: 1. Move to the left to avoid the group ahead.  
+2. Proceed forward slowly and carefully.  
+3. Listen for any changes in movement or obstacles.  
+4. If the group gets closer, stop and wait for them to pass.
+Timestamp: 19:18:05 | Guidance: 1. Move to the left to avoid the people ahead.  
+2. Proceed forward slowly and attentively.  
+3. Be aware of your surroundings, especially in low light.  
+4. If you hear them getting closer, pause and let them
+Timestamp: 19:18:26 | Guidance: 1. Proceed straight ahead on the path.  
+2. Keep a safe distance from the fence on your right.  
+3. Be cautious of the bench on your left as you pass by.  
+4. Stay alert for any changes in the surface
+Timestamp: 19:18:46 | Guidance: 1. Proceed straight ahead on the path.  
+2. Keep a safe distance from the bench on your left.  
+3. Stay mindful of any changes in the ground surface.  
+4. Continue moving forward until you reach your destination.
+Timestamp: 19:19:10 | Guidance: 1. Proceed straight ahead on the path.  
+2. Keep a slight distance from the bench on your left.  
+3. Be aware of any surrounding obstacles or changes in terrain.  
+4. Continue forward until you reach the end of the path
+Timestamp: 19:19:29 | Guidance: 1. Proceed straight ahead on the path.  
+2. Keep a safe distance from the fence on your right.  
+3. Be mindful of the bench on your left as you pass by.  
+4. Continue moving forward until you reach the next
+Timestamp: 19:19:53 | Guidance: 1. Proceed straight ahead on the path.  
+2. Stay centered to avoid benches on either side.  
+3. Be cautious of any tree roots or low branches.  
+4. Continue forward until you reach the next intersection or landmark.
+Timestamp: 19:20:16 | Guidance: 1. Move to the left to avoid the woman and her dog ahead.  
+2. Proceed forward slowly and carefully.  
+3. Be mindful of the dog's movements as you pass.  
+4. If the dog approaches, stop and wait for them
+Timestamp: 19:20:37 | Guidance: 1. Move to the left to avoid the couple ahead.  
+2. Proceed forward cautiously.  
+3. Stay alert for any changes in the path or surroundings.  
+4. If they get closer, pause and let them pass.  
