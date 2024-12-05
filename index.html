@@ -14,12 +14,12 @@
         <span style="font-size: 18px; line-height: 1.5em;"><strong>Clifford Reeve Menezes, Pratheek Prakash Shetty</strong></span><br>
         <span style="font-size: 16px; line-height: 1.5em;">Fall 2024 ECE 4554/5554 Computer Vision: Course Project</span><br>
         <span style="font-size: 16px; line-height: 1.5em;">Virginia Tech</span>
-        <p>This project uses object detection and image captioning models to provide hazard avoidance directions for users with visual impairments.</p>
+        <p style="text-align: center;">This project uses object detection and image captioning models to provide hazard avoidance directions for users with visual impairments.</p>
     </header>
 
     <section id="abstract">
         <h2>Abstract</h2>
-        <p>For visually impaired people, traveling alone in the modern world can be difficult, especially when crossing roadways or hazards in real-time. Our idea is to create safe smartphone navigation, eliminating the need for further special equipment while guaranteeing smooth guidance. To solve this problem, we created an assistive navigation system that uses YOLO for object identification, BLIP for scene captioning, and an API for a generative AI model that provides precise descriptions and guidance of hazards in their path in real-time. Our model achieves a —--- success rate with —----something.
+        <p>For visually impaired people, traveling alone in the modern world can be difficult, especially when crossing roadways or hazards in real-time. Our idea is to create safe smartphone navigation, eliminating the need for further special equipment while guaranteeing smooth guidance. Our aim us to help people having such problems and support them in their day-to-day activities. To solve this problem, we created an assistive navigation system that uses YOLO for object identification, BLIP for scene captioning, and an API for a generative AI model that provides precise descriptions and guidance of hazards in their path in real-time. Our model achieves a —--- success rate with —----something.
         </p>
         
     </section>
@@ -38,8 +38,46 @@
         <p>What if someone who is visually challenged could "see" what is going on around them? For the visually impaired, navigating the world may be a challenging task. While current solutions such as wearable technology, guide dogs, and specialized walking aids provide invaluable support, their accessibility, affordability, and efficacy are sometimes limited. On the other hand, depending just on a mobile phone offers a simpler and more economical method, taking advantage of smartphones' popularity.</p>
 
         <p>We are using a pre-trained YOLO model, which can perform real-time object detection with high accuracy. The system can efficiently identify hazards and obstacles such as vehicles, staircases, and pedestrians. When objects are detected, the results are sent to a BLIP model, which processes the scene and generates descriptive captions. These captions are then passed on to a generative AI tool via an API call. The AI predicts the most efficient course of action for the user. The resulting directions are converted into speech, which guides the user safely along the path. The approach combines fields in object detection, scene captioning, and generative AI.</p>
+        <p>The table below are the related works which inspired us to build our project</p>
 
-        <p>Compared to traditional methods, this system stands out for its use of a widely available mobile device, which reduces the need for specialized tools. Additionally, the system offers a more adaptive and user-centric solution by incorporating generative AI to refine the directions.
+        <table border="1">
+            <thead>
+                <tr>
+                    <th style="background-color: #333344;">Title of Paper</th>
+                    <th style="background-color: #333344;">Solution Implemented</th>
+                    <th style="background-color: #333344;">Year Released</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background-color: #333344; text-align: justify;">
+                    <td>Mobility Assistive Technology with Artificial Intelligence: Indoor Navigation assistance for the visually impaired using Arduino-based assistive Goggles <a href="#references">[1]</td>
+                    <td>A YOLO model was used to identify objects with COCO datasets. 3D-printed goggles were designed with a camera and sensor attached to capture images and measure distance. However, the goggles cannot be moved much as the sensor faces an error, and the shape of the goggles will have to be altered according to facial structures.</td>
+                    <td style="text-align: center;">2023</td>
+                </tr>
+                <tr style="background-color: #333344; text-align: justify;">
+                    <td>Realtime Indoor Navigation System for Visually Impaired Person using Direct-based Navigation <a href="#references">[3]</td>
+                    <td>Canny edge detection was used to identify edges in videos and images. However, only two out of five tests were able to detect edges. The model must be more robust as it cannot accurately detect edges.</td>
+                    <td style="text-align: center;">2022</td>
+                </tr>
+                <tr style="background-color: #333344; text-align: justify;">
+                    <td>Arduino based Smart Walking Cane for Visually Impaired People <a href="#references">[2]</td>
+                    <td>It uses a walking cane design with a water sensor to detect water and has an mp3 player connected for audio sounds. Efficiently minimized the weight of the cane. It has a resistor-based light to help users in dark environments. Overall, it is valuable and helpful to a user that uses a walking cane.</td>
+                    <td style="text-align: center;">2020</td>
+                </tr>
+                <tr style="background-color: #333344; text-align: justify;">
+                    <td>Camera Based Indoor Object Detection and Distance Estimation Framework for Assistive Mobility <a href="#references">[4]</td>
+                    <td>It used the YOLOv7 framework for object detection, the Google Text to Speech Python library, and image depth perception. Very helpful for image detection.</td>
+                    <td style="text-align: center;">2022</td>
+                </tr>
+                <tr style="background-color: #333344; text-align: justify;">
+                    <td>Smart Assistive Navigator for the Blind using Image Processing <a href="#references">[5]</td>
+                    <td>It uses the YOLO algorithm for object detection. Raspberry Pi is used to help locate edges. A webcam is used for high-quality video. But this model can only detect 20 objects.</td>
+                    <td style="text-align: center;">2023</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p>Compared to the above methods, this system stands out for the possible use of a widely available mobile device, which reduces the need for specialized tools. Additionally, the system offers a more adaptive and user-centric solution by incorporating generative AI to refine the directions.
         </p>
 
         <!-- add an image that shows workflow here or in the appraoch section -->
@@ -60,7 +98,7 @@
 
         <!-- (mention some papers here or make a related works page) -->
 
-        <p>The closest approach to our paper is [], which used 3D-printed glasses to detect objects using IoT.</p> 
+        <p>The closest approach to our paper is <a href="#references">[1]</a>, which used 3D-printed glasses to detect objects using IoT.</p> 
         <!-- mention that paper -->
 
         <p><b>Task 1: Finding an object detection model</b></p>
@@ -89,19 +127,11 @@
         </ol>
     </section> -->
 
-    <!-- <section id="success">
-        <h2>Sucess Parameters</h2>
-        <p>The project would be considered a success if the navigation system can efficiently identify hazardous objects in Real-Time.</p>
-    </section> -->
-
-    <!-- <section id="Experiments">
-        <h2>Experiments and Results</h2>
-        <p></p>
-    </section> -->
-
+    
     <section id="Experiments">
     <h2>Experiments and Results</h2>
 
+    <p>We conducted a series of experiments for each task. As our idea has not been used previously, our tests were based on recorded videos and live footage. Below is a table that gives an understanding of our experiments and findings.</p>
     
     <table border="1">
         <thead>
@@ -158,8 +188,25 @@
             </tr>
         </tbody>
     </table>
-   
+</section>
 
+<section id = "conclusion">
+    <h2>Conclusion</h2>
+    <!-- Conclusion. Briefly summarize the report. “This report has described ….” Discuss any ideas that 
+you have to make your approach better.  -->
+<p>This report has described a novel way to assist the visually impaired on the road. It includes a detailed description of the different approaches used to solve the problem and uses object detection, object captioning, LLMs, and text-to-speech models to achieve this goal.</p>
+    <p>With time, our approach can improve with the help of better lightweight LLMs, which will remove the dependency of an API call. We can also find or develop a more human-sounding text-to-speech model that could improve user comfort. Lastly, we can improve the depth perception of the model by training with more live data. </p>
+</section>
+
+<section id = "references">
+    <h2>References</h2>
+    <ol>
+        <li><a href="https://doi.org/10.1109/HNICEM60674.2023.10589004">J. R. B. Guevara et al., "Mobility Assistive Technology with Artificial Intelligence: Indoor Navigation Assistance for the Visually Impaired Using Arduino-Based Assistive Goggles," 2023 IEEE 15th International Conference on Humanoid, Nanotechnology, Information Technology, Communication and Control, Environment, and Management (HNICEM), Coron, Palawan, Philippines, 2023, pp. 1-6, doi: 10.1109/HNICEM60674.2023.10589004.</a></li>
+        <li><a href="https://doi.org/10.1109/ICISC47916.2020.9171209">M. Bansal, S. Malik, M. Kumar and N. Meena, "Arduino based Smart Walking Cane for Visually Impaired People," 2020 Fourth International Conference on Inventive Systems and Control (ICISC), Coimbatore, India, 2020, pp. 462-465, doi: 10.1109/ICISC47916.2020.9171209. keywords: {Legged locomotion;GSM;Radio frequency;Headphones;Blindness;Pressing;Feature extraction;Obstacle detection;Darkness detection;Water detection;GPS;GSM;RF remote},</a></li>
+        <li><a href="https://doi.org/10.1109/IC2IE56416.2022.9970063">T. Mantoro and M. Zamzami, "Realtime Indoor Navigation System for Visually Impaired Person using Direct-based Navigation," 2022 5th International Conference of Computer and Informatics Engineering (IC2IE), Jakarta, Indonesia, 2022, pp. 320-324, doi: 10.1109/IC2IE56416.2022.9970063. keywords: {Economics;Cataracts;Technological innovation;Computer vision;Indoor navigation;Visual impairment;Machine learning;vision;blind;navigation;indoor;object detection}</a></li>
+        <li><a href="https://doi.org/10.1109/SOLI57430.2022.10294458">V. K. Paswan and A. Choudhary, "Camera Based Indoor Object Detection and Distance Estimation Framework for Assistive Mobility," 2022 IEEE International Conference on Service Operations and Logistics, and Informatics (SOLI), Delhi, India, 2022, pp. 1-6, doi: 10.1109/SOLI57430.2022.10294458. keywords: {Deep learning;Navigation;Estimation;Object detection;Smart homes;Real-time systems;Indoor environment;smart home technology;Object detection;assistive mobility;visually impaired;deep learning;computer vision}</a></li>
+        <li><a href="https://doi.org/10.1109/ICSCSS57650.2023.10169767">M. Kulkarni, M. Chitale, S. Chitpur, A. Chivate, P. Chopade and S. Deshmukh, "Smart Assistive Navigator for the Blind using Image Processing," 2023 International Conference on Sustainable Computing and Smart Systems (ICSCSS), Coimbatore, India, 2023, pp. 916-921, doi: 10.1109/ICSCSS57650.2023.10169767. keywords: {Deep learning;Navigation;Face recognition;Image processing;Object detection;Cameras;Real-time systems;Image Processing;Obstacle Detection;Internet of things;Assistive Aid;Blind;Raspberry Pi}</a></li>
+        </ol>
 </section>
     <!-- <section id="demo">
         <h2>Demo Video</h2>
@@ -171,7 +218,8 @@
     </section> -->
 
     <footer>
-        <p> © Project by Clifford Reeve Menezes and Pratheek Prakash Shetty group 39</p>
+        <p style="text-align: center;"><b> © Project by Clifford Reeve Menezes and Pratheek Prakash Shetty</b></p>
+        <p style="text-align: center;"><b>Group 39</b></p>
         <a href="https://github.com/gosLp/cv-assistive-nav" target="_blank">GitHub Repository</a>
     </footer>
 </body>

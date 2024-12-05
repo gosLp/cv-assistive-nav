@@ -88,9 +88,22 @@ footer a {
     color: var(--accent-color);
     text-decoration: none;
     font-weight: bold;
+    text-align: center;
 }
 
 footer a:hover {
     text-decoration: underline;
 }
 
+#references {
+    margin-top: 50px;
+}
+
+#references a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#references a:hover {
+    text-decoration: underline;
+}
