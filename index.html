@@ -71,14 +71,14 @@
         <p>In the image or scene captioning world, many models accurately caption images in real-time. We experimented with the BLIP model, which captioned the objects sent by YOLO with almost complete accuracy. An observation noticed here was that sometimes the captions generated in an indoor environment were not as accurate compared to an outdoor environment. However, our model solely focuses on an outdoor environment, so this did not affect us.</p>
 
         <p><b>Task 3: Utilize an LLM that can provide the best results for the scene in front of the user.</b></p>
-        <p>Our initial approach was to use a local transformer like TinyBert LLM, which can locally give directions. However, upon implementation, we realized that the model gave incorrect results and required a lot of training, which could take a lot of computational power. Overall, implementing such a model locally could potentially risk draining the phone's battery or overheating the device. We eventually decided to make an API call to a preexisting LLM online. We gave a prompt to this model so it could identify solutions with ease. Upon testing with this LLM using live footage, we received accurate results in real time.</p>
+        <p>Our initial approach was to use a local transformer like TinyBert LLM, which can locally give directions. However, upon implementation, we realized that the model gave incorrect results and required a lot of training, which could take a lot of computational power. Overall, implementing such a model locally could potentially risk draining the phone's battery or overheating the device. We eventually decided to make an API call to a preexisting LLM online i.e ChatGPT 4. We gave a prompt to this model so it could identify solutions with ease. Upon testing with this LLM using live footage, we received accurate results in real time.</p>
 
         <p><b>Task 4: Convert the instructions into audio-based instruction.</b></p>
-        <!-- add this part -->
+        <p>We first appraoched the problem by using a machine learning based text-to-speech model like Coque TTS to get a human like voice, but it did not run on our hardware. We then used <b>pyttsx3</b> which worked better but did not sound human-like</p>
     </section>
     
 
-    <section id="workflow">
+    <!-- <section id="workflow">
         <h2>Workflow</h2>
         <ol>
             <li>Capture video from a phone's camera.</li>
@@ -87,18 +87,80 @@
             <li>Assisting Directions: We will make use of TinyBERT LLM, specially optimized to generate helpful directions with a minimum amount of information for real time communication with the user.</li>
             <li> Dataset: Our dataset will consist of annotated images relevant for pedestrian navigation-objects and environmental hazards that may pose a danger to people commuting on foot.</li>
         </ol>
-    </section>
+    </section> -->
 
-    <section id="success">
+    <!-- <section id="success">
         <h2>Sucess Parameters</h2>
         <p>The project would be considered a success if the navigation system can efficiently identify hazardous objects in Real-Time.</p>
-    </section>
+    </section> -->
 
-    <section id="Experiments">
+    <!-- <section id="Experiments">
         <h2>Experiments and Results</h2>
         <p></p>
-    </section>
+    </section> -->
 
+    <section id="Experiments">
+    <h2>Experiments and Results</h2>
+
+    
+    <table border="1">
+        <thead>
+            <tr style="background-color: #222233; text-align: center;">
+                <th colspan="8">Workflow for each task</th>
+            </tr>
+            <tr>
+                <th colspan="2" style="background-color: #ce5b5b;">Object Identifier</th>
+                <th colspan="2" style="background-color: #ce5b5b;">Scene Captioning</th>
+                <th colspan="2" style="background-color: #ce5b5b;">LLM Instruction</th>
+                <th colspan="2" style="background-color: #ce5b5b;">Text-to-Speech</th>
+            </tr>
+            <tr>
+                <th style="background-color: #bba318;">Model</th>
+                <th style="background-color: #bba318;">Results</th>
+                <th style="background-color: #0d5c0d;">Model</th>
+                <th style="background-color: #0d5c0d;">Results</th>
+                <th style="background-color: #311e9b;">Model</th>
+                <th style="background-color: #311e9b;">Results</th>
+                <th style="background-color: #81075d;">Model</th>
+                <th style="background-color: #81075d;">Results</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="background-color: #bba318;">YOLO nano</td>
+                <td style="background-color: #bba318;">No errors, objects identified accurately.</td>
+                <td style="background-color: #0d5c0d;">BLIP (hardcoded directions)</td>
+                <td style="background-color: #0d5c0d;">Multiple mistakes with live video.</td>
+                <td style="background-color: #311e9b;">TinyBert LLM</td>
+                <td style="background-color: #311e9b;">Multiple inaccuracies with live video.</td>
+                <td style="background-color: #81075d;">Toque ML model</td>
+                <td style="background-color: #81075d;">Could not run on hardware.</td>
+            </tr>
+            <tr>
+                <td style="background-color: #1e1e2f;"></td>
+                <td style="background-color: #1e1e2f;"></td>
+                <td style="background-color: #0d5c0d;">BLIP (context-based)</td>
+                <td style="background-color: #0d5c0d;">Accuracy improved tremendously.</td>
+                <td style="background-color: #311e9b;">PHI-2 LLM</td>
+                <td style="background-color: #311e9b;">Requires too much computational power.</td>
+                <td style="background-color: #81075d;">pyttsx3</td>
+                <td style="background-color: #81075d;">Voice not natural, but works.</td>
+            </tr>
+            <tr>
+                <td style="background-color: #1e1e2f;"></td>
+                <td style="background-color: #1e1e2f;"></td>
+                <td style="background-color: #0d5c0d;"></td>
+                <td style="background-color: #0d5c0d;">False captioning for indoor environments, but doesn't affect our use case.</td>
+                <td style="background-color: #311e9b;">ChatGPT 4 API</td>
+                <td style="background-color: #311e9b;">Accurate with live video testing.</td>
+                <td style="background-color: #1e1e2f;"></td>
+                <td style="background-color: #1e1e2f;"></td>
+            </tr>
+        </tbody>
+    </table>
+   
+
+</section>
     <!-- <section id="demo">
         <h2>Demo Video</h2>
         <p>Check out a demo video of the system in action:</p>
