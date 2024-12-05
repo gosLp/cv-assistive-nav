@@ -130,8 +130,11 @@
     
     <section id="Experiments">
     <h2>Experiments and Results</h2>
+    <p>We conducted a series of experiments for each task. As our idea has not been used previously, our tests were based on recorded videos and live footage.</p>
+    <h3>Experimental Setup</h3>
 
-    <p>We conducted a series of experiments for each task. As our idea has not been used previously, our tests were based on recorded videos and live footage. Below is a table that gives an understanding of our experiments and findings.</p>
+    <p>For our experimental setup, we recorded videos around Blacksburg. The data collected for testing has been done by our team and not outsourced from any dataset. As we used pre-trained models that have trained with large datasets we did not require any training for our model. We inserted the videos onto our system and began experimenting for each task. Below is a table that demonstrates each method we used for different tasks, the results we obtained, and the final model selected for our system.</p>
+    
     
     <table border="1">
         <thead>
@@ -188,6 +191,25 @@
             </tr>
         </tbody>
     </table>
+
+    <h3>Object Detection Experimentation</h3>
+    
+    <video id="Video2" style="width: 1100px; height: auto; display: block; margin: 0 auto;">
+        <source src="results_video\Object_det_example.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    
+      <script>
+        const video2 = document.getElementById("Video2");
+    
+        video2.addEventListener("click", () => {
+          video2.play();
+        });
+      </script>
+
+    <h3>LLM Guidance experimentation</h3>
+    <img src="results_video\guidance_image.png" alt="Image of the Guidance system working" style="display: block; margin: 0 auto; width: 1000px;">
+    <p style="text-align: center;">Image of the Guidance system working</p>
 </section>
 
 
