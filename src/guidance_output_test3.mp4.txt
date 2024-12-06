@@ -1,0 +1,30 @@
+Guidance Output Log
+===================
+Timestamp: 18:10:21 | Guidance: Move to the right to avoid the car 138 cm ahead.  
+Continue straight to navigate safely.
+Timestamp: 18:10:21 | Guidance: Move to the right to avoid the car 138 cm ahead.  
+Continue straight to navigate safely.
+Timestamp: 18:10:35 | Guidance: Move to the left to avoid the car 86 cm ahead.  
+Continue straight to navigate safely.
+Timestamp: 18:10:35 | Guidance: Move to the left to avoid the car 86 cm ahead.  
+Continue straight to navigate safely.
+Timestamp: 18:10:47 | Guidance: Move to the right to avoid the car 127 cm ahead.  
+Continue straight to navigate safely.
+Timestamp: 18:10:47 | Guidance: Move to the right to avoid the car 127 cm ahead.  
+Continue straight to navigate safely.
+Timestamp: 18:10:59 | Guidance: Move to the left to avoid the car 126 cm ahead.  
+Continue straight to navigate safely.
+Timestamp: 18:10:59 | Guidance: Move to the left to avoid the car 126 cm ahead.  
+Continue straight to navigate safely.
+Timestamp: 18:11:10 | Guidance: Move to the left to avoid the car 141 cm ahead.  
+Continue straight to navigate safely.
+Timestamp: 18:11:10 | Guidance: Move to the left to avoid the car 141 cm ahead.  
+Continue straight to navigate safely.
+Timestamp: 18:11:27 | Guidance: Move to the left to avoid the car 144 cm ahead.  
+Continue straight to navigate safely.
+Timestamp: 18:11:27 | Guidance: Move to the left to avoid the car 144 cm ahead.  
+Continue straight to navigate safely.
+Timestamp: 18:11:40 | Guidance: Move to the left to avoid the car 156 cm ahead.  
+Continue straight to navigate safely.
+Timestamp: 18:11:40 | Guidance: Move to the left to avoid the car 156 cm ahead.  
+Continue straight to navigate safely.

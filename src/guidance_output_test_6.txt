@@ -1,0 +1,8 @@
+Guidance Output Log
+===================
+Timestamp: 05:00:43 | Guidance: Move slightly to the right to avoid the parked car ahead.
+Timestamp: 05:00:58 | Guidance: Move to the left to avoid the parked car nearby. Stay on the sidewalk.
+Timestamp: 05:01:10 | Guidance: Move to the left to avoid the car on your right.
+Timestamp: 05:01:25 | Guidance: Move to the left to avoid the car on your right.
+Timestamp: 05:01:41 | Guidance: Move to the left to avoid the car driving on your right.
+Timestamp: 05:01:57 | Guidance: Move to the left to avoid the parked car on your right.

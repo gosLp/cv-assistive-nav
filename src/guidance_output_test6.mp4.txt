@@ -1,0 +1,30 @@
+Guidance Output Log
+===================
+Timestamp: 18:27:46 | Guidance: Move slightly to the right to avoid the parked car ahead.
+Timestamp: 18:27:46 | Guidance: Move slightly to the right to avoid the parked car ahead.
+Timestamp: 18:27:58 | Guidance: Move to the left to avoid the car nearby. Stay on the sidewalk.
+Timestamp: 18:27:58 | Guidance: Move to the left to avoid the car nearby. Stay on the sidewalk.
+Timestamp: 18:28:10 | Guidance: Move to the left to avoid the car on your right.
+Timestamp: 18:28:10 | Guidance: Move to the left to avoid the car on your right.
+Timestamp: 18:28:21 | Guidance: Move to the left to avoid the car on your right.
+Timestamp: 18:28:21 | Guidance: Move to the left to avoid the car on your right.
+Timestamp: 18:28:33 | Guidance: Move to the left to stay clear of the car on your right.
+Timestamp: 18:28:33 | Guidance: Move to the left to stay clear of the car on your right.
+Timestamp: 18:28:45 | Guidance: Move to the left to avoid the car on your right.
+Timestamp: 18:28:45 | Guidance: Move to the left to avoid the car on your right.
+Timestamp: 18:28:57 | Guidance: Move to the left to avoid the car on your right.
+Timestamp: 18:28:57 | Guidance: Move to the left to avoid the car on your right.
+Timestamp: 18:29:09 | Guidance: Move to the left to avoid the car on your right.
+Timestamp: 18:29:09 | Guidance: Move to the left to avoid the car on your right.
+Timestamp: 18:29:22 | Guidance: Move to the left to avoid the car on your right.
+Timestamp: 18:29:22 | Guidance: Move to the left to avoid the car on your right.
+Timestamp: 18:29:52 | Guidance: Move to the left to avoid the car on your right.
+Timestamp: 18:29:52 | Guidance: Move to the left to avoid the car on your right.
+Timestamp: 18:30:08 | Guidance: Move to the left to avoid the car on your right.
+Timestamp: 18:30:08 | Guidance: Move to the left to avoid the car on your right.
+Timestamp: 18:30:20 | Guidance: You may proceed straight ahead; the path is clear.
+Timestamp: 18:30:20 | Guidance: You may proceed straight ahead; the path is clear.
+Timestamp: 18:30:33 | Guidance: You may proceed straight ahead; the path is clear.
+Timestamp: 18:30:33 | Guidance: You may proceed straight ahead; the path is clear.
+Timestamp: 18:30:45 | Guidance: You may proceed straight ahead; the path is clear.
+Timestamp: 18:30:45 | Guidance: You may proceed straight ahead; the path is clear.

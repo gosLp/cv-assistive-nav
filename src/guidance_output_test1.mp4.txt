@@ -1,0 +1,14 @@
+Guidance Output Log
+===================
+Timestamp: 17:56:00 | Guidance: Move slightly to the right to avoid the car on your left.
+Timestamp: 17:56:00 | Guidance: Move slightly to the right to avoid the car on your left.
+Timestamp: 17:56:11 | Guidance: Move slightly to the right to avoid the car on your left.
+Timestamp: 17:56:11 | Guidance: Move slightly to the right to avoid the car on your left.
+Timestamp: 17:56:23 | Guidance: Move slightly to the right to avoid the car on your left.
+Timestamp: 17:56:23 | Guidance: Move slightly to the right to avoid the car on your left.
+Timestamp: 17:56:34 | Guidance: You may proceed straight ahead.
+Timestamp: 17:56:34 | Guidance: You may proceed straight ahead.
+Timestamp: 17:56:45 | Guidance: Move slightly to the right to avoid the car on your left.
+Timestamp: 17:56:45 | Guidance: Move slightly to the right to avoid the car on your left.
+Timestamp: 17:56:57 | Guidance: You may proceed straight ahead.
+Timestamp: 17:56:57 | Guidance: You may proceed straight ahead.

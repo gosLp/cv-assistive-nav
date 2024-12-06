@@ -1,0 +1,16 @@
+Guidance Output Log
+===================
+Timestamp: 18:24:17 | Guidance: Proceed straight ahead.
+Timestamp: 18:24:17 | Guidance: Proceed straight ahead.
+Timestamp: 18:24:28 | Guidance: Proceed straight ahead.
+Timestamp: 18:24:28 | Guidance: Proceed straight ahead.
+Timestamp: 18:24:41 | Guidance: Proceed straight ahead.
+Timestamp: 18:24:41 | Guidance: Proceed straight ahead.
+Timestamp: 18:24:54 | Guidance: Move to the left to avoid the person ahead.
+Timestamp: 18:24:54 | Guidance: Move to the left to avoid the person ahead.
+Timestamp: 18:25:06 | Guidance: Move to the right to avoid the person on your left.
+Timestamp: 18:25:06 | Guidance: Move to the right to avoid the person on your left.
+Timestamp: 18:25:18 | Guidance: Proceed straight ahead.
+Timestamp: 18:25:18 | Guidance: Proceed straight ahead.
+Timestamp: 18:25:30 | Guidance: Proceed straight ahead.
+Timestamp: 18:25:30 | Guidance: Proceed straight ahead.

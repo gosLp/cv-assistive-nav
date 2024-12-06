@@ -1,0 +1,50 @@
+Guidance Output Log
+===================
+Timestamp: 18:33:56 | Guidance: Stay alert for a car 214 cm to your left. Continue straight on the sidewalk.
+Timestamp: 18:33:56 | Guidance: Stay alert for a car 214 cm to your left. Continue straight on the sidewalk.
+Timestamp: 18:34:14 | Guidance: Be aware of a car 275 cm to your left. Continue straight on the sidewalk.
+Timestamp: 18:34:14 | Guidance: Be aware of a car 275 cm to your left. Continue straight on the sidewalk.
+Timestamp: 18:34:25 | Guidance: Move to the right to avoid the car 187 cm to your left.
+Timestamp: 18:34:25 | Guidance: Move to the right to avoid the car 187 cm to your left.
+Timestamp: 18:34:38 | Guidance: Move to the right to avoid the cars 177 cm, 138 cm, and 122 cm to your left.
+Timestamp: 18:34:38 | Guidance: Move to the right to avoid the cars 177 cm, 138 cm, and 122 cm to your left.
+Timestamp: 18:34:50 | Guidance: Move to the right to avoid the cars 197 cm, 178 cm, 148 cm, and 140 cm to your left.
+Timestamp: 18:34:50 | Guidance: Move to the right to avoid the cars 197 cm, 178 cm, 148 cm, and 140 cm to your left.
+Timestamp: 18:35:03 | Guidance: Move to the right to avoid the cars 187 cm and 151 cm to your left.
+Timestamp: 18:35:03 | Guidance: Move to the right to avoid the cars 187 cm and 151 cm to your left.
+Timestamp: 18:35:15 | Guidance: Move to the right to avoid the cars 201 cm and 169 cm to your left.
+Timestamp: 18:35:15 | Guidance: Move to the right to avoid the cars 201 cm and 169 cm to your left.
+Timestamp: 18:35:27 | Guidance: Move to the right to avoid the car 184 cm to your left. Continue straight to avoid the car 141 cm ahead.
+Timestamp: 18:35:27 | Guidance: Move to the right to avoid the car 184 cm to your left. Continue straight to avoid the car 141 cm ahead.
+Timestamp: 18:35:39 | Guidance: Move to the right to avoid the cars 172 cm and 136 cm to your left. Continue straight.
+Timestamp: 18:35:39 | Guidance: Move to the right to avoid the cars 172 cm and 136 cm to your left. Continue straight.
+Timestamp: 18:35:50 | Guidance: Move to the right to avoid the cars 145 cm and 164 cm to your left. Continue straight.
+Timestamp: 18:35:50 | Guidance: Move to the right to avoid the cars 145 cm and 164 cm to your left. Continue straight.
+Timestamp: 18:36:02 | Guidance: Move to the right to avoid the cars 127 cm and 92 cm to your left. Continue straight to avoid the car 87 cm ahead.
+Timestamp: 18:36:02 | Guidance: Move to the right to avoid the cars 127 cm and 92 cm to your left. Continue straight to avoid the car 87 cm ahead.
+Timestamp: 18:36:14 | Guidance: Move to the right to avoid the cars 178 cm and 110 cm to your left.
+Timestamp: 18:36:14 | Guidance: Move to the right to avoid the cars 178 cm and 110 cm to your left.
+Timestamp: 18:36:26 | Guidance: Move to the right to avoid the cars 167 cm, 104 cm, and 93 cm to your left.
+Timestamp: 18:36:26 | Guidance: Move to the right to avoid the cars 167 cm, 104 cm, and 93 cm to your left.
+Timestamp: 18:36:38 | Guidance: Move to the right to avoid the cars 141 cm and 89 cm to your left.
+Timestamp: 18:36:38 | Guidance: Move to the right to avoid the cars 141 cm and 89 cm to your left.
+Timestamp: 18:36:53 | Guidance: Move to the right to avoid the cars 137 cm and 94 cm to your left.
+Timestamp: 18:36:53 | Guidance: Move to the right to avoid the cars 137 cm and 94 cm to your left.
+Timestamp: 18:37:05 | Guidance: Move to the right to avoid the cars 144 cm, 89 cm, and 84 cm to your left.
+Timestamp: 18:37:05 | Guidance: Move to the right to avoid the cars 144 cm, 89 cm, and 84 cm to your left.
+Timestamp: 18:37:17 | Guidance: Move to the right to avoid the cars 159 cm, 105 cm, 103 cm, 119 cm, 121 cm, and 113 cm to your left.
+Timestamp: 18:37:17 | Guidance: Move to the right to avoid the cars 159 cm, 105 cm, 103 cm, 119 cm, 121 cm, and 113 cm to your left.
+Timestamp: 18:37:28 | Guidance: Move to the right to avoid the cars 160 cm, 97 cm, 119 cm, 89 cm, and 112 cm to your left.
+Timestamp: 18:37:28 | Guidance: Move to the right to avoid the cars 160 cm, 97 cm, 119 cm, 89 cm, and 112 cm to your left.
+Timestamp: 18:37:40 | Guidance: Move to the right to avoid the cars 195 cm, 117 cm, and 134 cm to your left.
+Timestamp: 18:37:40 | Guidance: Move to the right to avoid the cars 195 cm, 117 cm, and 134 cm to your left.
+Timestamp: 18:37:52 | Guidance: Move to the right to avoid the cars 143 cm, 193 cm, 186 cm, 122 cm, and 127 cm to your left.
+Timestamp: 18:37:52 | Guidance: Move to the right to avoid the cars 143 cm, 193 cm, 186 cm, 122 cm, and 127 cm to your left.
+Timestamp: 18:38:04 | Guidance: Move to the right to avoid the cars 189 cm and 180 cm to your left. Continue straight.
+Timestamp: 18:38:04 | Guidance: Move to the right to avoid the cars 189 cm and 180 cm to your left. Continue straight.
+Timestamp: 18:38:16 | Guidance: Move to the right to avoid the car 185 cm to your left. Continue straight.
+Timestamp: 18:38:16 | Guidance: Move to the right to avoid the car 185 cm to your left. Continue straight.
+Timestamp: 18:38:27 | Guidance: Move to the right to avoid the cars 169 cm and 115 cm to your left. Continue straight.
+Timestamp: 18:38:27 | Guidance: Move to the right to avoid the cars 169 cm and 115 cm to your left. Continue straight.
+Timestamp: 18:38:39 | Guidance: Move to the right to avoid the cars 161 cm, 77 cm, 70 cm, and 95 cm to your left. Continue straight.
+Timestamp: 18:38:39 | Guidance: Move to the right to avoid the cars 161 cm, 77 cm, 70 cm, and 95 cm to your left. Continue straight.
