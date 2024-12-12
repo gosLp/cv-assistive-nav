@@ -29,7 +29,7 @@ Ensure you are using Python 3.8 or later. It is recommended to create a virtual 
 
 ```bash
 python -m venv env
-source env/bin/activate  # On Windows, use `env\Scripts\activate`
+source env/bin/activate  # On Windows pc, use `env\Scripts\activate`
 ```
 
 ### Step 3: Install Required Packages
